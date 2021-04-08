@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form id="register_form">
+		<fieldset>
+			<legend>회원정보입력</legend>
+			아이디 <input type="text" id="name_text"> <input type="button" value="중복검사"
+			onclick="reset()"><br>
+			<button onclick="reset()">검사</button>
+			패스워드 <input type="password"><br>
+			패스워드 확인 <input type="password"><br>
+			이름 <input type="text"><br>
+			휴대폰 번호 <input type="text"><br>
+			이메일 <input type="text"><br>
+			생일 <input type="date"><br>
+			홈페이지 <input type="text"><br>
+			<input type="radio" name="gender" value="0">여성
+			<input type="radio" name="gender" value="1">남성	
+		</fieldset>
+	
+		<input type="submit" value="제출">
+		<input type="reset" value="초기화">
+	</form>
+
+</body>
+</html>
