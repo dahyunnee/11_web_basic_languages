@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form>
+		<fieldset>
+			<legend>회원 가입 화면</legend>
+			<p><label>이름 : </label><input type="text"></p>
+			<p><label>아이디 : </label><input type="text"> (아이디는 12자 이내로 입력하세요 
+				<input type="button" value="아이디중복확인" onclick=""> )</p>
+			<p><label>비밀번호 : </label><input type="text"></p>
+			
+			<p><input type="radio" name="gender" value="1"> 남
+			<input type="radio" name="gender" value="2"> 여</p>
+			
+			<p><label>사는 지역: </label><select name="area" id="area">
+				<option>서울특별시</option>
+				<option>부산광역시</option>
+				<option>대전광역시</option>
+			</select></p>
+			
+			<p><label>이메일주소</label><input type="text">@<input type="text">
+			(이메일 수신허용 <input type="radio" name="acceptordeny" value="accept">허용
+			<input type="radio" name="acceptordeny" value="deny">거부)</p>
+			
+			<p><label>직업</label><select name="job" id="job">
+				<option>학생</option>
+				<option>직장인</option>
+				<option>취업준비생</option>
+			</select></p>
+			
+			<p><label>자기소개</label><br>
+				<textarea rows="8" cols="30" id="introduce" name="introduce" ></textarea>
+			</p>
+			
+			<input type="submit" value="제출">
+			<input type="reset" value="취소">
+		</fieldset>
+	</form>
+
+
+
+</body>
+</html>
