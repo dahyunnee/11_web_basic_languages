@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css 요소 및 이미지 수정</title>
+</head>
+<body id="target" style="background-color : skyblue">
+
+	<img id="image" src="../images/pome.png" width="120" height="100" alt="강아지 사진">
+	<input type="button" onclick="changeImage()" value="눌러보세요">
+	<hr>
+	
+	<input type="radio" name="C1" onclick="changeColor('lightblue')"> 파란색
+	<input type="radio" name="C1" onclick="changeColor('lightgreen')"> 초록색
+	<hr>
+	
+	<button onclick="changeColors()">배경색상 변경</button> 
+	<hr>
+	
+	<div>
+		<img src="../images/pic_1.jpg" width="200" height="200" id="photo" alt="로고">
+		<p>
+			<button onclick="changeImages(0)">이전</button>
+			<button onclick="changeImages(1)">다음</button>
+		</p>
+	</div>
+	
+	<script>
+	
+		function changeImage(){
+			
+			document.getElementById("image").src = "../images/poodle.png";
+			
+		}
+		
+		function changeColor(color){
+			
+			document.getElementById("target").style.backgroundColor = color;
+		}
+		
+		var color = ["red", "orange", "yellow", "purple", "pink", "gray", "skyblue"];
+		var idx = 0;
+		function changeColors(){
+			
+			if ( idx == color.length ) idx = 0;
+			
+			document.getElementById("target").style.backgroundColor = color[idx ++];
+		}
+		
+		
+		var imgNum = 1;
+		function changeImages(direct){
+				
+			if (direct == 1){
+				
+				imgNum ++;
+			}
+			else {
+				
+				imgNum --;
+			}
+			
+			if (imgNum == 0) imgNum = 1;
+			else if (imgNum == 10) imgNum = 9;
+			
+			document.getElementById("photo").src = "../images/pic_" + imgNum +".jpg";
+			
+		}
+		
+	</script>
+
+</body>
+</html>
