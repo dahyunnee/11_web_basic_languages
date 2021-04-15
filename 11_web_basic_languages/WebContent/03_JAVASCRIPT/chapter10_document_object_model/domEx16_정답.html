@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습예제</title>
+</head>
+<body>
+	<fieldset>
+		<form name='f1'>
+	   		<p>
+				<label>아이디 : <input type="text" name="id" name="name" ></label>
+			</p>
+	   		<p id="target">
+				<label>비밀번호 : <input type="password" id="pwd" name="pwd" onblur="checkPwdLength()"></label>
+			</p>
+	   		<p >
+				<label>이메일 : <input type="email" id="email" name="email" ></label>
+			</p>
+			<p>
+				<input type="submit" value="전송">
+			</p>
+		</form>
+		
+		
+		
+		<script>
+			
+			var isWritten = false;
+			function checkPwdLength(){
+				
+				var length = document.getElementById("pwd").value.length;
+				
+				var pTag = document.createElement("p");
+				var textTag = document.createTextNode("비밀번호는 8자리 이상으로 작성하세요");
+				pTag.appendChild(textTag);
+				pTag.style="color : red";
+				
+				
+				// isWritten 변수 사용이유 ? : "비밀번호 ~~" 문구 한번만 나오게 하고 removeChild를 "비밀번호~~" 문구에만 적용 위해
+						
+				if( length < 8 && !isWritten) {
+					
+					document.getElementById("target").appendChild(pTag);
+					isWritten = true;
+				}
+		
+				
+				else if(length >=8 && isWritten) {
+					
+					document.getElementById("target").removeChild(document.getElementById("target").lastChild);
+					isWritten = false;
+				}
+					
+				
+			}
+		
+		</script>
+	</fieldset>	
+	
+</body>
+</html>
